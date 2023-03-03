@@ -2,10 +2,7 @@
   display: flex;
   justify-content: center;
   background-color: beige;
-
   /* border: 5px dashed black; */
-
-
 }
 
 #container{
@@ -24,10 +21,12 @@
   margin-right: auto;
 
 }
+
 #sub-title{
   text-align: center;
   text-decoration-line: underline;
 }
+
 #card-container{
   display: flex;
   justify-content: center;
