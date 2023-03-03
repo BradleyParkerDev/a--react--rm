@@ -13,7 +13,7 @@ function App() {
           <img src={require("./Rick_and_Morty.png")} height= "150px"/>
         </div>
 
-        <h1 id="sub-title">Characters</h1>  
+        <h1 id="sub-title">Characters:</h1>  
 
         
         <div id= "card-container">
