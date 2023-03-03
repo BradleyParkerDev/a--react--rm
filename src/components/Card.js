@@ -44,7 +44,7 @@ function Card(){
   return (
       characters.map(character =>(
         <div id="card">
-            <img id ="character-image" src = {character.characterImage} alt="Character Image" />
+            <img id ="character-image" src = {character.characterImage} alt="Character Image" height="150px" width= "100px"/>
             <ul>
                 <li>{character.name}</li>
                 <li>{character.gender}</li>
