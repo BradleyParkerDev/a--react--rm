@@ -30,7 +30,7 @@ return (
         <button onClick={() => setPage(page - 1)}>
           Previous
         </button>         
-        <button onClick={() => setPage(page + 1)}>
+        <button margin-left="2px" onClick={() => setPage(page + 1)}>
           Next
         </button>          
       </div> 

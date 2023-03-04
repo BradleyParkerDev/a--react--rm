@@ -5,6 +5,7 @@ import './Card.css';
 function Card(props){
     //State hook 
     const [characters, setCharacter] = useState([]);
+    const [cardState, setCardState] = useState(true)
 
     useEffect(() => {
 
@@ -44,27 +45,30 @@ function Card(props){
         fetchData();
     });
 
-    // function flipCard(){
-    //     if()
-    // }
+
+
     return (
 
         characters.map(character =>(
         
-        <div id="card" >
+        <div className="card">
+            
+            
             <img id ="character-image" src = {character.characterImage} alt="Character Image"/>
             <ul>
                 <li>{character.name}</li>
                 <li>{character.gender}</li>
                 <li>{character.species}</li>
                 <li>{character.characterStatus}</li>
+            </ul>
+            
+            {/* <p id="backside">Backside of Card</p>
+            <ul>
                 <li># of Episodes Featured: {character.episodesFeatured}</li>
                 <li>{character.location}</li>
-                <li>{character.origin}</li>
-
-            </ul>
+                <li>{character.origin}</li>                
+            </ul> */}
         </div>
-
 
 
         )
