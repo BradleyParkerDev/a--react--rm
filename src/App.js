@@ -4,26 +4,43 @@ import './Rick_and_Morty.png';
 import './App.css';
 
 function App() {
+  const [page, setPage] = useState(1)
+  useEffect(() => {
+    console.log(page)
 
 
-  return (
-    <div id="body">
-      <div id="container">
-        <div id="title">
-          <img src={require("./Rick_and_Morty.png")}/>
-        </div>
+  });
 
-        <h1 id="sub-title">Characters:</h1>  
-
-        
-        <div id= "card-container">
-          <Card />
-        </div>
+  // if(page >= 42){
+  //     page = 42;
+  // }
+  // else if(page <= 1){
+  //     page = 1;
+  // }
+return (
+  <div id="body">
+    <div id="container">
+      <div id="title">
+        <img src={require("./Rick_and_Morty.png")}/>
       </div>
+      <h1 id="sub-title">Characters:</h1>
+      <div id="buttons">
+        <button onClick={() => setPage(page - 1)}>
+          Previous
+        </button>         
+        <button onClick={() => setPage(page + 1)}>
+          Next
+        </button>          
+      </div> 
+      <p id ="page-number">Page {page} </p>
 
+      <div id= "card-container">
+        <Card page={page}/>
+      </div>
     </div>
+  </div>
 
-  );
+);
 }
 
 export default App;

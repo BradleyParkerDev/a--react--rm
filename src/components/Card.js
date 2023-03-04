@@ -2,47 +2,47 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import './Card.css';
 
-function Card(){
-  // Initialize state to hold the posts
-  const [characters, setCharacter] = useState([]);
+function Card(props){
+    //State hook 
+    const [characters, setCharacter] = useState([]);
 
-  // effect functions can't be async, so declare the
-  // async function inside the effect, then call it
-  useEffect(() => {
-    async function fetchData() {
-        // Call fetch as usual
-        const res = await fetch(
-        `https://rickandmortyapi.com/api/character`
-        );
+    useEffect(() => {
 
-        // Pull out the data as usual
-        const json = await res.json();
+        //Fetching data from API
 
-        // Save the posts into state
-        // (look at the Network tab to see why the path is like this)
-        setCharacter(json.results.map(
-            c => { 
-                return{
-                'id': c.id,
-                'characterImage': c.image,
-                'name': c.name, 
-                'gender': c.gender, 
-                'species': c.species,
-                'characterStatus': c.status 
+        async function fetchData() {
+            // Call fetch as usual
+            const res = await fetch(
+                `https://rickandmortyapi.com/api/character?page=${props.page}`
+            );
+
+            // Pull out the data as usual
+            const json = await res.json();
+
+            //creating an object with API data
+            setCharacter(json.results.map(
+                c => { 
+                    return{
+                        'id': c.id,
+                        'characterImage': c.image,
+                        'name': c.name, 
+                        'gender': c.gender, 
+                        'species': c.species,
+                        'characterStatus': c.status 
+                    }
+
                 }
 
-            }
-        
-    ));
-    }
+            ));
+        }   
 
-    fetchData();
-  }, [ ]); // we want to run fetch when the subreddit changes 
-  // (this is happens on submit)
+        fetchData();
+    }); // we want to run fetch when the subreddit changes 
+    // (this is happens on submit)
 
-  // Render as usual
-  return (
-      characters.map(character =>(
+    return (
+
+        characters.map(character =>(
         <div id="card">
             <img id ="character-image" src = {character.characterImage} alt="Character Image"/>
             <ul>
@@ -55,10 +55,30 @@ function Card(){
 
 
 
-      )
-      )
-  );
+        )
+        )
+    );
 }
 
+// // Hook designed for changing pages
+// function pageButtons() {
+//     const [page, setPage] = useState(1)
+ 
+//     useEffect(() => {
+//     });
+  
+//     if(page >= 42){
+//         page = 42;
+//     }
+//     else if(page <= 1){
+//         page = 1;
+//     }
+//     return (
+//     <div id="buttons">
+//         <button onClick={() => setPage(page - 1)}>Previous</button>
+//         <button onClick={() => setPage(page + 1)}>Next</button>          
+//     </div>  
+//     );
+// }
 
 export default Card;
