@@ -57,14 +57,15 @@ function Card(props){
                             <li>{character.species}</li>
                             <li>{character.characterStatus}</li>
                         </ul>
+                        
                     </div>
 
                     <div class ="back">
                         <p id="backside">Backside of Card</p>
                         <ul>
                             <li># of Episodes Featured: {character.episodesFeatured}</li>
-                            <li>{character.location}</li>
-                            <li>{character.origin}</li>                
+                            <li>Location: {character.location}</li>
+                            <li>Origin: {character.origin}</li>                
                         </ul>
                     </div>
                 </div>

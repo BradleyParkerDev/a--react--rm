@@ -26,6 +26,7 @@ return (
         <img src={require("./Rick_and_Morty.png")}/>
       </div>
       <h1 id="sub-title">Characters:</h1>
+      <p id = "sub-text">(click and hold down cards)</p>
       <div id="buttons">
         <button onClick={() => setPage(page - 1)}>
           Previous
