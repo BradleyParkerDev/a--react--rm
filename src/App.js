@@ -7,6 +7,7 @@ function App() {
   const [page, setPage] = useState(1)
   useEffect(() => {
     console.log(page)
+    
     //prevents page from being a below 1 or above 42
     if(page >= 42){
       setPage(42)

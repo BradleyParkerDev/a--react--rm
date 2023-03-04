@@ -28,7 +28,12 @@ function Card(props){
                         'name': c.name, 
                         'gender': c.gender, 
                         'species': c.species,
-                        'characterStatus': c.status 
+                        'characterStatus': c.status,
+                        'episodesFeatured': c.episode.length,
+                        'location': c.location.name,
+                        'origin': c.origin.name
+
+                         
                     }
 
                 }
@@ -37,19 +42,26 @@ function Card(props){
         }   
 
         fetchData();
-    }); // we want to run fetch when the subreddit changes 
-    // (this is happens on submit)
+    });
 
+    // function flipCard(){
+    //     if()
+    // }
     return (
 
         characters.map(character =>(
-        <div id="card">
+        
+        <div id="card" >
             <img id ="character-image" src = {character.characterImage} alt="Character Image"/>
             <ul>
                 <li>{character.name}</li>
                 <li>{character.gender}</li>
                 <li>{character.species}</li>
                 <li>{character.characterStatus}</li>
+                <li># of Episodes Featured: {character.episodesFeatured}</li>
+                <li>{character.location}</li>
+                <li>{character.origin}</li>
+
             </ul>
         </div>
 
@@ -59,26 +71,5 @@ function Card(props){
         )
     );
 }
-
-// // Hook designed for changing pages
-// function pageButtons() {
-//     const [page, setPage] = useState(1)
- 
-//     useEffect(() => {
-//     });
-  
-//     if(page >= 42){
-//         page = 42;
-//     }
-//     else if(page <= 1){
-//         page = 1;
-//     }
-//     return (
-//     <div id="buttons">
-//         <button onClick={() => setPage(page - 1)}>Previous</button>
-//         <button onClick={() => setPage(page + 1)}>Next</button>          
-//     </div>  
-//     );
-// }
 
 export default Card;
