@@ -1,11 +1,45 @@
+/*
+w3 schools flip card tutorial:
+https://www.w3schools.com/howto/howto_css_flip_card.asp 
+*/
+
 .card{
     width: 200px;
     height: 300px;
     background-color: azure;
     border: 2px solid black;
     margin: 3px;
+    /* perspective: 1000px;  */
+    /* Remove this if you don't want the 3D effect */
+    /* transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out; */
+
 }
 
+.inner-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:active .inner-card {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+.back {
+    transform: rotateY(180deg);
+  }
 #character-image{
     height:150px; 
     width: 100px;

@@ -45,31 +45,30 @@ function Card(props){
         fetchData();
     });
 
-
-
     return (
-
         characters.map(character =>(
-        
-        <div className="card">
-            
-            
-            <img id ="character-image" src = {character.characterImage} alt="Character Image"/>
-            <ul>
-                <li>{character.name}</li>
-                <li>{character.gender}</li>
-                <li>{character.species}</li>
-                <li>{character.characterStatus}</li>
-            </ul>
-            
-            {/* <p id="backside">Backside of Card</p>
-            <ul>
-                <li># of Episodes Featured: {character.episodesFeatured}</li>
-                <li>{character.location}</li>
-                <li>{character.origin}</li>                
-            </ul> */}
-        </div>
+            <div className="card">
+                <div class="inner-card">
+                    <div class="front">
+                        <img id ="character-image" src = {character.characterImage} alt="Character Image"/>
+                        <ul>
+                            <li>{character.name}</li>
+                            <li>{character.gender}</li>
+                            <li>{character.species}</li>
+                            <li>{character.characterStatus}</li>
+                        </ul>
+                    </div>
 
+                    <div class ="back">
+                        <p id="backside">Backside of Card</p>
+                        <ul>
+                            <li># of Episodes Featured: {character.episodesFeatured}</li>
+                            <li>{character.location}</li>
+                            <li>{character.origin}</li>                
+                        </ul>
+                    </div>
+                </div>
+            </div>        
 
         )
         )
