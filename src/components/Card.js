@@ -5,7 +5,6 @@ import './Card.css';
 function Card(props){
     //State hook 
     const [characters, setCharacter] = useState([]);
-    const [cardState, setCardState] = useState(true)
 
     useEffect(() => {
 
